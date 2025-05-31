@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply antialiased text-gray-800 overflow-x-hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-heading;
+}
+
+.container {
+  @apply px-4 mx-auto;
+  max-width: 1280px;
+}
+
+@layer components {
+  .section {
+    @apply py-16 md:py-24;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-4 text-secondary-700;
+  }
+  
+  .section-subtitle {
+    @apply text-lg md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto;
+  }
+  
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+  
+  .btn-primary {
+    @apply btn bg-primary-500 text-white hover:bg-primary-600 focus:ring-primary-500;
+  }
+  
+  .btn-secondary {
+    @apply btn bg-secondary-700 text-white hover:bg-secondary-800 focus:ring-secondary-700;
+  }
+  
+  .btn-outline {
+    @apply btn border-2 border-primary-500 text-primary-500 hover:bg-primary-500 hover:text-white focus:ring-primary-500;
+  }
+  
+  .card {
+    @apply bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300;
+  }
+  
+  .nav-link {
+    @apply text-gray-700 hover:text-primary-500 font-medium transition-colors duration-300;
+  }
+  
+  .nav-link.active {
+    @apply text-primary-500 font-semibold;
+  }
+
+  .page-header {
+    @apply relative min-h-[60vh] flex items-center bg-gradient-to-br from-secondary-700 via-secondary-800 to-secondary-900 text-white overflow-hidden;
+  }
+
+  .page-header::before {
+    content: '';
+    @apply absolute inset-0 bg-primary-500 opacity-10 transform rotate-12 scale-150;
+  }
+
+  .page-header::after {
+    content: '';
+    @apply absolute inset-0 bg-accent-500 opacity-5 transform -rotate-12 scale-150;
+  }
+
+  .page-header-content {
+    @apply relative z-10 container py-24 md:py-32;
+  }
+}
+
+/* Animation utilities */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered animations */
+.stagger-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.stagger-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Delay utilities */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+.delay-500 { transition-delay: 500ms; }
+
+/* Scroll progress indicator */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background-color: theme('colors.primary.500');
+  z-index: 100;
+  transition: width 0.1s ease-out;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .container {
+    @apply px-4;
+  }
+
+  .section {
+    @apply py-12;
+  }
+
+  .page-header {
+    @apply min-h-[50vh];
+  }
+
+  .page-header-content {
+    @apply py-20;
+  }
+
+  .testimonial-card {
+    @apply mx-4;
+  }
+}
