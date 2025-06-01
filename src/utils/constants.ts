@@ -5,11 +5,11 @@ export const COMPANY = {
   phone: '03038125936',
   address: 'muridke,pakistan',
   social: {
-    twitter: 'https://twitter.com/codentra',
-    facebook: 'https://facebook.com/codentra',
-    instagram: 'https://instagram.com/codentra',
-    linkedin: 'https://linkedin.com/company/codentra',
-    github: 'https://github.com/codentra',
+    twitter: 'https://twitter.com/CODENTRA_CODE',
+    facebook: 'https://facebook.com/profile.php?id=61576699782840',
+    instagram: 'https://instagram.com/codentra.code',
+    linkedin: 'https://www.linkedin.com/in/codentra-code-12438a369/',
+    github: 'https://github.com/mianahmad-cmyk',
   },
   founded: 2023
 };
