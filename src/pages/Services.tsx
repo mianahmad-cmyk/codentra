@@ -50,7 +50,7 @@ const Services = () => {
   return (
     <>
       {/* Page Header */}
-     <div className="bg-gradient-to-br from-secondary-700 to-secondary-900 text-white py-20 md:py-20 overflow-hidden">
+ <div className="bg-gradient-to-br from-secondary-700 to-secondary-900 text-white py-20 md:py-20 overflow-hidden">
   <div className="container mx-auto px-4">
     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
       
@@ -69,16 +69,16 @@ const Services = () => {
           From stunning website development and custom app design to strategic digital marketing, branding, and SaaS development — we build solutions that elevate your brand and drive results.
         </p>
 
-        <div className="flex flex-wrap gap-4">
+        <div className="flex flex-nowrap gap-3">
           <a 
             href="/contact" 
-            className="bg-white text-secondary-800 font-semibold py-3 px-6 rounded-md hover:bg-white/90 shadow-lg shadow-white/20 transition"
+            className="bg-white text-secondary-800 font-semibold py-2 px-4 rounded-md hover:bg-white/90 shadow-lg shadow-white/20 transition whitespace-nowrap text-sm md:text-base"
           >
             Get Started
           </a>
           <a 
             href="/services" 
-            className="border-2 border-white text-white py-3 px-6 rounded-md hover:bg-white/10 transition"
+            className="border-2 border-white text-white py-2 px-4 rounded-md hover:bg-white/10 transition whitespace-nowrap text-sm md:text-base"
           >
             View All Services →
           </a>
@@ -100,6 +100,7 @@ const Services = () => {
     </div>
   </div>
 </div>
+
 
 
       {/* Services Overview */}
