@@ -50,7 +50,7 @@ const Services = () => {
   return (
     <>
       {/* Page Header */}
-     <div className="bg-gradient-to-br from-secondary-700 to-secondary-900 text-white py-24 md:py-32 overflow-hidden">
+     <div className="bg-gradient-to-br from-secondary-700 to-secondary-900 text-white py-20 md:py-20 overflow-hidden">
   <div className="container mx-auto px-4">
     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
       

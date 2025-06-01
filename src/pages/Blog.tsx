@@ -19,52 +19,87 @@ const Blog = () => {
       </div> */}
 
       {/* Coming Soon Section */}
-      <Section>
-        <div className="max-w-4xl mx-auto text-center">
-          <AnimatedElement animation="fade-in">
-            <div className="w-24 h-24 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-8">
-              <Mail className="h-12 w-12 text-primary-500" />
-            </div>
-          </AnimatedElement>
-          
-          <AnimatedElement animation="slide-up" delay={200}>
-            <h2 className="text-3xl md:text-4xl font-bold text-secondary-700 mb-6">
-              Coming Soon
-            </h2>
-          </AnimatedElement>
-          
-          <AnimatedElement animation="slide-up" delay={400}>
-            <p className="text-xl text-gray-600 mb-10">
-              We're working on valuable content for you. Our blog will feature insights, tips, and industry trends to help your business succeed in the digital landscape.
-            </p>
-          </AnimatedElement>
-          
-          <AnimatedElement animation="slide-up" delay={600}>
-            <div className="card p-8 md:p-10 max-w-xl mx-auto">
-              <h3 className="text-xl font-bold text-secondary-700 mb-4">
-                Stay Updated
-              </h3>
-              <p className="text-gray-600 mb-6">
-                Subscribe to our newsletter to be notified when we launch our blog and to receive our latest updates.
-              </p>
-              <form className="flex flex-col sm:flex-row gap-3">
-                <input 
-                  type="email" 
-                  placeholder="Your email address" 
-                  className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
-                  required
-                />
-                <button 
-                  type="submit"
-                  className="btn-primary whitespace-nowrap"
-                >
-                  Subscribe
-                </button>
-              </form>
-            </div>
-          </AnimatedElement>
+     <Section>
+  <div className="max-w-4xl mx-auto text-center">
+    <AnimatedElement animation="fade-in">
+      <div className="w-24 h-24 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-8">
+        <Mail className="h-12 w-12 text-primary-500" />
+      </div>
+    </AnimatedElement>
+
+    <AnimatedElement animation="slide-up" delay={200}>
+      <h2 className="text-3xl md:text-4xl font-bold text-secondary-700 mb-6">
+        Coming Soon
+      </h2>
+    </AnimatedElement>
+
+    <AnimatedElement animation="slide-up" delay={400}>
+      <p className="text-xl text-gray-600 mb-10">
+        We're working on valuable content for you. Our blog will feature insights, tips, and industry trends to help your business succeed in the digital landscape.
+      </p>
+    </AnimatedElement>
+
+    <AnimatedElement animation="slide-up" delay={600}>
+      <div className="card p-8 md:p-10 max-w-xl mx-auto">
+        <h3 className="text-xl font-bold text-secondary-700 mb-4">
+          Stay Updated
+        </h3>
+        <p className="text-gray-600 mb-6">
+          Subscribe to our newsletter to be notified when we launch our blog and to receive our latest updates.
+        </p>
+
+        <div id="newsletter-success" className="hidden bg-green-100 text-green-800 rounded-md p-3 mb-4">
+          Thank you for subscribing!
         </div>
-      </Section>
+        <div id="newsletter-error" className="hidden bg-red-100 text-red-800 rounded-md p-3 mb-4">
+          Something went wrong. Please try again.
+        </div>
+
+        <form
+          className="flex flex-col sm:flex-row gap-3"
+          onSubmit={async (e) => {
+            e.preventDefault();
+            const emailInput = e.target.querySelector('input[type="email"]');
+            const successBox = document.getElementById('newsletter-success');
+            const errorBox = document.getElementById('newsletter-error');
+
+            successBox.classList.add('hidden');
+            errorBox.classList.add('hidden');
+
+            try {
+              const res = await fetch('https://x8ki-letl-twmt.n7.xano.io/api:q0RRCSR7/newsletter_subscribers', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email: emailInput.value }),
+              });
+
+              if (!res.ok) throw new Error();
+
+              emailInput.value = '';
+              successBox.classList.remove('hidden');
+            } catch (err) {
+              errorBox.classList.remove('hidden');
+            }
+          }}
+        >
+          <input 
+            type="email" 
+            placeholder="Your email address" 
+            className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+            required
+          />
+          <button 
+            type="submit"
+            className="btn-primary whitespace-nowrap"
+          >
+            Subscribe
+          </button>
+        </form>
+      </div>
+    </AnimatedElement>
+  </div>
+</Section>
+
 
       {/* Future Topics */}
       <Section title="Topics We'll Cover" className="bg-gray-50">

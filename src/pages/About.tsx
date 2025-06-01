@@ -8,7 +8,7 @@ import { Calendar, Users, Briefcase, Award } from 'lucide-react';
 const About = () => {
   return (
     <>
-  <div className="relative min-h-[75vh] flex items-center bg-gradient-to-br from-secondary-700 via-secondary-800 to-secondary-900 text-white overflow-hidden py-20 md:py-24">
+  <div className="relative min-h-[75vh] flex items-center bg-gradient-to-br from-secondary-700 via-secondary-800 to-secondary-900 text-white overflow-hidden py-20 md:py-20">
   {/* Blurred Background Circles */}
   <div className="absolute inset-0 z-0 overflow-hidden">
     <div className="absolute -right-40 -top-40 w-96 h-96 rounded-full bg-primary-500 blur-3xl opacity-20"></div>

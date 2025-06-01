@@ -146,22 +146,11 @@ const Footer = () => {
         </div>
 
         <hr className="my-8 border-gray-700" />
-        
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm">
+
+        <div className="flex justify-center">
+          <p className="text-gray-400 text-sm text-center">
             &copy; {currentYear} {COMPANY.name}. All rights reserved.
           </p>
-          <div className="mt-4 md:mt-0 flex space-x-6 text-sm">
-            <Link to="/privacy" className="text-gray-400 hover:text-white transition-colors">
-              Privacy Policy
-            </Link>
-            <Link to="/terms" className="text-gray-400 hover:text-white transition-colors">
-              Terms of Service
-            </Link>
-            <Link to="/sitemap" className="text-gray-400 hover:text-white transition-colors">
-              Sitemap
-            </Link>
-          </div>
         </div>
       </div>
     </footer>
